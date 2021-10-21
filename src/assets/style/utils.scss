@@ -1,0 +1,563 @@
+.cursor-hover-big {
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.cursor-point {
+    cursor: pointer;
+}
+
+.postion_relative {
+    position: relative;
+}
+
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.primary_bg {
+    background-color: var(--primary) !important;
+}
+
+.danger_bg {
+    background-color: var(--primary-risk) !important;
+}
+
+.primary {
+    color: var(--primary) !important;
+}
+
+.success {
+    color: var(--success) !important;
+}
+
+.warning {
+    color: var(--warning) !important;
+}
+
+.danger {
+    color: var(--primary-risk) !important;
+}
+
+.border_dashed_ccc_1 {
+    border: 1px dashed #ccc;
+    background-size: 100% 100%;
+}
+
+.text_justify {
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.display_inline_block {
+    display: inline-block;
+}
+
+@mixin no-scrollbar {
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+}
+
+@mixin scroll-y {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+}
+
+
+// /* 滚动槽 */
+
+@mixin scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+}
+
+//蓝色渐变色
+.blue-linear {
+    background-image: -webkit-linear-gradient(bottom, #1c6ef6, #f2f7ff);
+    -webkit-background-clip: text;
+    /*必需加前缀 -webkit- 才支持这个text值 */
+    -webkit-text-fill-color: transparent;
+    /*text-fill-color会覆盖color所定义的字体颜色： */
+}
+
+@mixin box-shadow {
+    box-shadow: 0 0 0.05rem rgba(0, 0, 0, 0.5);
+}
+
+@mixin scale($x, $y) {
+    transform: scale($x, $y);
+}
+
+@mixin scale-box-shadow($x, $y, $size, $color) {
+    transform: scale($x, $y);
+    box-shadow: 0 0 $size $color;
+}
+
+@mixin transform-box($x) {
+    transform: translate($x);
+}
+
+@mixin flexFun($direct, $justify, $align, $wrap) {
+    display: flex;
+    flex-direction: $direct;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin lcd($size, $multiple) {
+    font-family: "lcd_att_phone_timedateregular";
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: $size * $multiple !important;
+
+    span:nth-of-type(1) {
+        font-size: $size * $multiple * 1.8 !important;
+    }
+}
+
+.font-lcd {
+    font-family: "lcd_att_phone_timedateregular";
+}
+
+.font-light {
+    font-family: "orbitron_light";
+}
+
+.word-wrap_break-word {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+@mixin util($multiple) {
+    @for $i from 10 through 100 {
+        .font-size-#{$i} {
+            font-size: 0.01rem * $i * $multiple !important;
+        }
+
+        .width-#{$i} {
+            width: $i * 1% !important;
+        }
+
+        .height-#{$i} {
+            height: $i * 1% !important;
+        }
+    }
+
+    @for $i from 10 through 40 {
+        .font-lcd-size-#{$i} {
+            @include lcd(0.01rem * $i, $multiple);
+        }
+    }
+
+    .font-size-mini {
+        font-size: 0.1rem * $multiple !important;
+    }
+
+    .font-size-small {
+        font-size: 0.15rem * $multiple !important;
+    }
+
+    .font-size-medium {
+        font-size: 0.2rem * $multiple !important;
+    }
+
+    .font-size-big {
+        font-size: 0.3rem * $multiple !important;
+    }
+
+    .font-size-large {
+        font-size: 0.4rem * $multiple !important;
+    }
+
+    .font-lcd-size-mini {
+        @include lcd(0.1rem, $multiple);
+    }
+
+    .font-lcd-size-small {
+        @include lcd(0.15rem, $multiple);
+    }
+
+    .font-lcd-size-medium {
+        @include lcd(0.2rem, $multiple);
+    }
+
+    .font-lcd-size-big {
+        @include lcd(0.3rem, $multiple);
+    }
+
+    .font-lcd-size-large {
+        @include lcd(0.4rem, $multiple);
+    }
+
+    @for $i from 0 through 50 {
+
+        //margin
+        .mt-#{$i} {
+            margin-top: 0.01rem * $i * $multiple;
+        }
+
+        .mr-#{$i} {
+            margin-right: 0.01rem * $i * $multiple;
+        }
+
+        .ml-#{$i} {
+            margin-left: 0.01rem * $i * $multiple;
+        }
+
+        .mb-#{$i} {
+            margin-bottom: 0.01rem * $i * $multiple;
+        }
+
+        // pading
+        .pt-#{$i} {
+            padding-top: 0.01rem * $i * $multiple;
+        }
+
+        .pr-#{$i} {
+            padding-right: 0.01rem * $i * $multiple;
+        }
+
+        .pl-#{$i} {
+            padding-left: 0.01rem * $i * $multiple;
+        }
+
+        .pb-#{$i} {
+            padding-bottom: 0.01rem * $i * $multiple;
+        }
+
+        .padding_#{$i} {
+            padding: $i * 1px;
+        }
+
+        .margin_left_#{$i} {
+            margin-left: 1% * $i;
+        }
+
+        .font_weight_#{$i} {
+            font-weight: 20 * $i;
+        }
+    }
+
+    $textAlgin: (left, center, right);
+
+    @each $name in $textAlgin {
+        .text_#{$name} {
+            text-align: $name;
+        }
+    }
+}
+
+/*
+flex多行布局
+*/
+
+/*
+flex元素自身属性
+*/
+
+@mixin flex-self-shrink-no {
+    flex-shrink: 0;
+}
+
+@mixin flex-self-row-e {
+    margin-left: auto;
+}
+
+@mixin flex-self-col-e {
+    margin-top: auto;
+}
+
+/*
+flex布局横向
+*/
+
+@mixin flex-row-s-s {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-row-s-e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+@mixin flex-row-s-c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+//
+@mixin flex-row-e-s {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+@mixin flex-row-e-e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+@mixin flex-row-e-c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//
+@mixin flex-row-c-s {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin flex-row-c-e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@mixin flex-row-c-c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+//
+@mixin flex-row-sb-s {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin flex-row-sb-e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@mixin flex-row-sb-c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//
+@mixin flex-row-sa-s {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+@mixin flex-row-sa-e {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+@mixin flex-row-sa-c {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*
+flex布局纵向
+*/
+
+//
+@mixin flex-col-s-s {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-col-s-e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+@mixin flex-col-s-c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+//
+@mixin flex-col-e-s {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+@mixin flex-col-e-e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+@mixin flex-col-e-c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+//
+@mixin flex-col-c-s {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@mixin flex-col-c-e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@mixin flex-col-c-c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+//
+@mixin flex-col-sb-s {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin flex-col-sb-e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+@mixin flex-col-sb-c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+//
+@mixin flex-col-sa-s {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+@mixin flex-col-sa-e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+@mixin flex-col-sa-c {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@mixin grid-col($template, $gap) {
+    display: grid;
+    grid-template-columns: $template;
+    grid-column-gap: $gap;
+}
+
+@mixin grid-row($template, $gap) {
+    display: grid;
+    grid-template-rows: $template;
+    grid-row-gap: $gap;
+}

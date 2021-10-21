@@ -1,0 +1,65 @@
+{
+  "id": "2456652",
+  "name": "财务系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "财务系统",
+  "glyphs": [
+    {
+      "icon_id": "5354181",
+      "name": "点",
+      "font_class": "dian",
+      "unicode": "e7a5",
+      "unicode_decimal": 59301
+    },
+    {
+      "icon_id": "736512",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "4538058",
+      "name": "钱",
+      "font_class": "qian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "15634359",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "17967636",
+      "name": "购物",
+      "font_class": "gouwu",
+      "unicode": "eead",
+      "unicode_decimal": 61101
+    },
+    {
+      "icon_id": "6204091",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "15315321",
+      "name": "收起",
+      "font_class": "shouqi",
+      "unicode": "e72a",
+      "unicode_decimal": 59178
+    },
+    {
+      "icon_id": "15315834",
+      "name": "展开",
+      "font_class": "zhankai",
+      "unicode": "e72c",
+      "unicode_decimal": 59180
+    }
+  ]
+}
