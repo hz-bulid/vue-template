@@ -1,0 +1,512 @@
+.cursor-hover-big {
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.cursor-point {
+  cursor: pointer;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin font-shadow($fs, $c) {
+  text-shadow: $fs 0px $fs $c, 0px $fs $fs $c, 0px -#{$fs} $fs $c,
+    -#{$fs} 0px $fs $c;
+}
+.click_under {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 1px solid;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.2s;
+    margin: auto;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  &:hover {
+    @extend .font-glow;
+  }
+}
+.font-glow {
+  color: white;
+  @include font-shadow(3px, #037fa2);
+}
+@for $i from 1 through 24 {
+  .grid-span-#{$i} {
+    grid-column-end: span $i;
+  }
+  .grid-row-span-#{$i} {
+    grid-row-end: span $i;
+  }
+}
+@mixin box-shadow($size, $color) {
+  box-shadow: 0 0 $size $color;
+}
+
+@mixin scale($x, $y) {
+  transform: scale($x, $y);
+}
+
+@mixin scale-box-shadow($x, $y, $size, $color) {
+  transform: scale($x, $y);
+  box-shadow: 0 0 $size $color;
+}
+
+@mixin flexFun($direct, $justify, $align, $wrap) {
+  display: flex;
+  flex-direction: $direct;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin lcd($size, $multiple) {
+  font-family: "lcd_att_phone_timedateregular";
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: $size * $multiple !important;
+  span:nth-of-type(1) {
+    font-size: $size * $multiple * 1.8 !important;
+  }
+}
+
+.font-lcd {
+  font-family: "lcd_att_phone_timedateregular";
+}
+
+.font-light {
+  font-family: "orbitron_light";
+}
+
+@mixin util($multiple) {
+  @for $i from 10 through 40 {
+    .font-size-#{$i} {
+      font-size: 0.01rem * $i * $multiple !important;
+    }
+  }
+  @for $i from 10 through 40 {
+    .font-lcd-size-#{$i} {
+      @include lcd(0.01rem * $i, $multiple);
+    }
+  }
+  .font-size-mini {
+    font-size: 0.1rem * $multiple !important;
+  }
+  .font-size-small {
+    font-size: 0.15rem * $multiple !important;
+  }
+  .font-size-medium {
+    font-size: 0.2rem * $multiple !important;
+  }
+  .font-size-big {
+    font-size: 0.3rem * $multiple !important;
+  }
+  .font-size-large {
+    font-size: 0.4rem * $multiple !important;
+  }
+  .font-lcd-size-mini {
+    @include lcd(0.1rem, $multiple);
+  }
+  .font-lcd-size-small {
+    @include lcd(0.15rem, $multiple);
+  }
+  .font-lcd-size-medium {
+    @include lcd(0.2rem, $multiple);
+  }
+  .font-lcd-size-big {
+    @include lcd(0.3rem, $multiple);
+  }
+  .font-lcd-size-large {
+    @include lcd(0.4rem, $multiple);
+  }
+  @for $i from 0 through 50 {
+    //margin
+    .mt-#{$i} {
+      margin-top: 0.01rem * $i * $multiple;
+    }
+    .mr-#{$i} {
+      margin-right: 0.01rem * $i * $multiple;
+    }
+    .ml-#{$i} {
+      margin-left: 0.01rem * $i * $multiple;
+    }
+    .mb-#{$i} {
+      margin-bottom: 0.01rem * $i * $multiple;
+    }
+    // pading
+    .pt-#{$i} {
+      padding-top: 0.01rem * $i * $multiple;
+    }
+    .pr-#{$i} {
+      padding-right: 0.01rem * $i * $multiple;
+    }
+    .pl-#{$i} {
+      padding-left: 0.01rem * $i * $multiple;
+    }
+    .pb-#{$i} {
+      padding-bottom: 0.01rem * $i * $multiple;
+    }
+  }
+}
+
+/*
+flex多行布局
+*/
+
+/*
+flex元素自身属性
+*/
+
+@mixin flex-self-shrink-no {
+  flex-shrink: 0;
+}
+
+@mixin flex-self-row-e {
+  margin-left: auto;
+}
+
+@mixin flex-self-col-e {
+  margin-top: auto;
+}
+
+/*
+flex布局横向
+*/
+
+@mixin flex-row-s-s {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-row-s-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+@mixin flex-row-s-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+//
+@mixin flex-row-e-s {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@mixin flex-row-e-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@mixin flex-row-e-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+//
+@mixin flex-row-c-s {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-row-c-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@mixin flex-row-c-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+//
+@mixin flex-row-sb-s {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-row-sb-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-row-sb-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//
+@mixin flex-row-sa-s {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@mixin flex-row-sa-e {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@mixin flex-row-sa-c {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*
+flex布局纵向
+*/
+
+//
+@mixin flex-col-s-s {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin flex-col-s-e {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+@mixin flex-col-s-c {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+//
+@mixin flex-col-e-s {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+@mixin flex-col-e-e {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@mixin flex-col-e-c {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+//
+@mixin flex-col-c-s {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-col-c-e {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+@mixin flex-col-c-c {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+//
+@mixin flex-col-sb-s {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@mixin flex-col-sb-e {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin flex-col-sb-c {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//
+@mixin flex-col-sa-s {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+@mixin flex-col-sa-e {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+@mixin flex-col-sa-c {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin box {
+  border: 15px solid;
+  border-image: url("~@/assets/images/theme/simple/home/left_bottom.png") 16 20
+    fill;
+}
+@mixin grid-col($template, $gap) {
+  display: grid;
+  grid-template-columns: $template;
+  grid-column-gap: $gap;
+}
+
+@mixin grid-row($template, $gap) {
+  display: grid;
+  grid-template-rows: $template;
+  grid-row-gap: $gap;
+}
+.zoom-right-enter-active {
+  transform-origin: top right;
+  animation: zoom-right-enter 0.5s ease both;
+  animation-delay: 0.1s;
+}
+.zoom-right-leave-active {
+  transform-origin: top right;
+  animation: zoom-right-leave 0.5s ease both;
+}
+@keyframes zoom-right-enter {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes zoom-right-leave {
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.zoom-right-reverse-enter-active {
+ 
+  animation: zoom-right-reverse-enter 0.5s ease both;
+  animation-delay: 0.3s;
+}
+.zoom-right-reverse-leave-active {
+
+  animation: zoom-right-reverse-leaver 0.5s ease both;
+}
+@keyframes zoom-right-reverse-enter {
+  from {
+    opacity: 0;
+    transform: scale(2);
+  }
+  
+
+}
+@keyframes zoom-right-reverse-leaver {
+  to {
+    opacity: 0;
+    transform:scale(2);
+  }
+}

@@ -1,0 +1,33 @@
+// 下边框渐变
+@mixin borderImage() {
+    border-image: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0) 0%,
+            #00a0fd 50%,
+            rgba(0, 0, 0, 0) 100%
+        )
+        20 20;
+    border-bottom: 2px solid;
+}
+// 下边框渐变
+@mixin borderImageRight() {
+    border-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0) 0%,
+            #00a0fd 50%,
+            rgba(0, 0, 0, 0) 100%
+        )
+        20 20;
+    border-right: 2px solid;
+}
+// 上边框渐变
+@mixin borderImageTop() {
+    border-image: linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0) 0%,
+            #00a0fd 50%,
+            rgba(0, 0, 0, 0) 100%
+        )
+        20 20;
+    border-top: 2px solid;
+}
