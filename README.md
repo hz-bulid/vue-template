@@ -1,4 +1,4 @@
-# hz-finances
+# vue-template
 
 ## Project setup
 ```
