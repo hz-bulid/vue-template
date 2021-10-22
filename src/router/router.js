@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-22 14:35:25
- * @LastEditTime: 2021-10-22 16:37:54
+ * @LastEditTime: 2021-10-22 17:01:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-template\src\router\router.js
@@ -40,7 +40,7 @@ const router = [
     redirect: "Home",
     hidden: true,
     meta: { title: "首页", affix: true },
-    component: () => import("@/layout/Index.vue"),
+    component: () => import("@/layout/index.vue"),
     children: RouterConfig.concat(pageRouters),
   },
   {
