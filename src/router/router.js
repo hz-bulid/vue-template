@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-10-22 14:35:25
- * @LastEditTime: 2021-10-22 17:01:24
+ * @LastEditTime: 2021-11-02 15:36:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \vue-template\src\router\router.js
@@ -22,7 +22,6 @@ viewsFiles.keys().forEach((key) => {
       name = viewsFiles(key).default.name || path.split("/")[len - 1], //获取文件夹名
       title = viewsFiles(key).default.title || name; // 功能名称
 
-      console.log('%c [ `@/views/${fileUrl}` ]', 'font-size:13px; background:pink; color:#bf2c9f;', `@/views/${fileUrl}`)
     pageRouters.push({
       path: `/${name}`,
       name: name,

@@ -15,7 +15,7 @@ const simple = {
   '--warning': '#FA930E',
   '--danger': '#F55252',
   '--info': '#999999',
-  '--text-primary': '#388FF3',
+  '--text-primary': '#388FF3', // 文本主要的
   '--text-regular': '#666666',
   '--text-placeholder': '#CCCCCC', // select禁选
   '--border-color-light': '#E4E7ED', // 边框色灯
@@ -60,13 +60,13 @@ const eyehelp = {
   '--warning': '#FA930E',
   '--danger': '#F55252',
   '--info': '#999999',
-  '--text-primary': '#66C86E',
+  '--text-primary': '#66C86E', // 文本主要的
   '--text-regular': '#666666',
   '--text-placeholder': '#CCCCCC', // select禁选
   '--border-color-light': '#E4E7ED',
   '--border-color-lighter': '#EEEEEE',
-  '--background-color-base': '#C6EBCA',
-  '--table-header-background': 'rgba(255,255,255,0.3)',
+  '--background-color-base': '#C6EBCA', // 基础背景色
+  '--table-header-background': 'rgba(255,255,255,0.3)', // 表头背景
   '--header-bg': '#e7f0f7', // 顶部导航背景
   '--header-padding-color': '#cdd0d7', // 顶部导航右侧间隔
   '--aside-bg': '#e7f0f7', // 侧边栏
